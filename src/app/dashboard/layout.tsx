@@ -1,11 +1,22 @@
+"use client";
+import Link from "next/link";
+import { use, useState } from "react";
+
 export default function DashBoardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [count, setCount] = useState(0);
+
   return (
-    <div>
-      <div>我是 DashBoardLayout</div>
+    <div className="border-2 border-dashed border-black p-4 w-1/2 mx-auto mt-10">
+      <div className="flex gap-4 mb-4 font-bold text-lg text-purple-500">
+        <Link href="/dashboard/about">About</Link>
+        <Link href="/dashboard/settings">Settings</Link>
+      </div>
+      <h2>Dashboard Layout {count}</h2>
+      <button className="bg-black text-white p-2 my-4 rounded" onClick={() => setCount(count + 1)}>Increment</button>
       {children}
     </div>
   );

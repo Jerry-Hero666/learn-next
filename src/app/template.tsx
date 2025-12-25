@@ -4,7 +4,7 @@ export default function Template({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-red-500 root-template">
+    <div className="root-template">
       <div>我是 Template</div>
       {children}
     </div>

@@ -1,12 +1,14 @@
 import Picture from "@/components/picture";
 import scale from "../../../public/scale.png";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Scale",
+  description: "Scale page description",
+};
 const Scale = () => {
   return (
-    <Picture
-      imgUrl={scale}
-      altText="Scale Image"
-      content="Scale content"
-    />
+    <Picture imgUrl={scale} altText="Scale Image" content="Scale content" />
   );
 };
 

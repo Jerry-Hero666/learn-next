@@ -1,9 +1,14 @@
-const performance = () => {
+import Picture from "@/components/picture";
+import performance from "../../../public/perform.jpeg";
+
+const Performance = () => {
   return (
-    <div>
-      <h1>performance</h1>
-    </div>
+    <Picture
+      imgUrl={performance}
+      altText="Performance Image"
+      content="Performance content"
+    />
   );
 };
 
-export default performance;
+export default Performance;

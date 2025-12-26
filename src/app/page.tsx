@@ -1,9 +1,8 @@
-import Image from "next/image";
+import homeSrc from "../../public/home.webp";
+import Picture from "@/components/picture";
 
 export default function Home() {
   return (
-    <div className="bg-red-200 h-screen">
-      <h1>我是 page</h1>
-    </div>
+    <Picture imgUrl={homeSrc} altText="Home Image" content="Home content" />
   );
 }

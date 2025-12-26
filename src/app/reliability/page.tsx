@@ -1,8 +1,13 @@
+import Picture from "@/components/picture";
+import reliability from "../../../public/reliablity.webp";
+
 const Reliability = () => {
   return (
-    <div>
-      <h1>reliability</h1>
-    </div>
+    <Picture
+      imgUrl={reliability}
+      altText="Reliability Image"
+      content="Reliability content"
+    />
   );
 };
 

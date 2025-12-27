@@ -23,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // 验证是否提交commit
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} `}>

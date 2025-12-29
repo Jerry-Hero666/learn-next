@@ -1,5 +1,4 @@
 import Picture from "@/components/picture";
-import performance from "../../../public/perform.jpeg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 const Performance = () => {
   return (
     <Picture
-      imgUrl={performance}
+      imgUrl="/perform.jpeg"
       altText="Performance Image"
       content="Performance content"
     />

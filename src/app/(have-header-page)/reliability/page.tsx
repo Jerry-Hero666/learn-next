@@ -1,5 +1,4 @@
 import Picture from "@/components/picture";
-import reliability from "../../../public/reliablity.webp";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
 const Reliability = () => {
   return (
     <Picture
-      imgUrl={reliability}
+      imgUrl="/reliablity.webp"
       altText="Reliability Image"
       content="Reliability content"
     />

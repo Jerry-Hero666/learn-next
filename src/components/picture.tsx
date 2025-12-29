@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 
 interface IProps {
-    imgUrl: StaticImageData;
+    imgUrl: StaticImageData | string;
     altText: string;
     content: string;
 }

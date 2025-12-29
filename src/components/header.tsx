@@ -10,11 +10,6 @@ const linkData = [
 
 export default function Header() {
   const pathname = usePathname();
-  const hrefs = [...linkData.map((link) => link.href), "/"];
-
-  if (!pathname || !hrefs.includes(pathname)) {
-    return null;
-  }
 
   return (
     <div className="absolute w-full z-10">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, ADLaM_Display } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -9,6 +9,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const adlamDisplay = ADLaM_Display({
+  weight: ["400"],
+  variable: "--font-adlam-display",
   subsets: ["latin"],
 });
 
@@ -25,7 +31,9 @@ export default function RootLayout({
   // 验证是否提交commit
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} `}>
+      <body
+        className={`${geistMono.className}`}
+      >
         {children}
       </body>
     </html>

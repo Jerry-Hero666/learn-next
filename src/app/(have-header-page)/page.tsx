@@ -8,6 +8,6 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <Picture imgUrl="/home.webp" altText="Home Image" content="Home content" />
+    <Picture imgUrl="/home.webp" altText="Home Image" content="Home Beauty" />
   );
 }

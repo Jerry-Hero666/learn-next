@@ -1,8 +1,14 @@
-const DashboardPage = () => {
+import { Metadata } from "next";
+import BlogList from "@/components/blog";
+
+export const metadata: Metadata = {
+  title: "博客列表",
+  description: "Home page description",
+};
+
+const BlogPage = () => {
   return (
-    <div>
-      <h1>DashboardPage</h1>
-    </div>
+    <BlogList />
   );
 };
-export default DashboardPage;
+export default BlogPage;

@@ -3,6 +3,7 @@ import Link from "next/link";
 const linkData = [
   { href: "/blog", label: "博客列表页" },
   { href: "/parallel", label: "平行路由页面" },
+  { href: "/picture", label: "图片页面" },
 ];
 
 

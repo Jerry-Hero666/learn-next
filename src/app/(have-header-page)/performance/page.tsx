@@ -1,5 +1,6 @@
 import Picture from "@/components/picture";
 import { Metadata } from "next";
+import {data} from '@/data'
 
 export const metadata: Metadata = {
   title: "Performance",

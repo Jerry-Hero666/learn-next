@@ -1,3 +1,4 @@
+
 import Picture from "@/components/picture";
 import { Button } from "antd";
 import { Metadata } from "next";

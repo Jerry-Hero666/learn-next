@@ -20,8 +20,8 @@ export default function PictureModel(props: IParams) {
           <Image
             src={item.src}
             alt={item.alt}
-            width={400}
-            height={400}
+            width={600}
+            height={600}
             className="rounded-lg"
             onClick={(e) => e.stopPropagation()}
           />

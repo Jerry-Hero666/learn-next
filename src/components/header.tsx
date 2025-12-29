@@ -22,7 +22,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={pathname === link.href ? "text-purple-500" : ""}
+              className={`${pathname === link.href ? "text-purple-500" : ""} hover:text-purple-500`}
             >
               {link.label}
             </Link>

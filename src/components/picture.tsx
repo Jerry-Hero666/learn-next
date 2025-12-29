@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 
 interface IProps {
   imgUrl: StaticImageData | string;
-  altText: string;
+  altText?: string;
   content?: string;
   contentComponent?: React.ReactNode;
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, ADLaM_Display } from "next/font/google";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,10 +32,8 @@ export default function RootLayout({
   // 验证是否提交commit
   return (
     <html lang="en">
-      <body
-        className={`${geistMono.className}`}
-      >
-        {children}
+      <body className={`${geistMono.className}`}>
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );

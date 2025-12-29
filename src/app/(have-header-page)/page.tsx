@@ -1,5 +1,7 @@
 import Picture from "@/components/picture";
+import { Button } from "antd";
 import { Metadata } from "next";
+import HomeContent from "./home-content";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -8,6 +10,12 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <Picture imgUrl="/home.webp" altText="Home Image" content="Home Beauty" />
+    <div>
+      <Picture
+        imgUrl="/home.webp"
+        altText="Home Image"
+        contentComponent={<HomeContent/>}
+      />
+    </div>
   );
 }

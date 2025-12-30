@@ -1,9 +1,8 @@
 import db from "@/db";
 import { NextResponse } from "next/server";
-import { data } from "./../../../../data/index";
 
 interface IParams {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 // DELETE -> /api/articles/:id

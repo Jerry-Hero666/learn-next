@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Button } from 'antd';
+import LoginOut from "@/components/loginout";
 
 const linkData = [
   { href: "/blog", label: "博客列表页" },
@@ -21,6 +23,7 @@ export default function HomeContent() {
           </Link>
         ))
       }
+      <LoginOut />
     </div>
   );
 }

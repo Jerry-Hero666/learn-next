@@ -8,7 +8,7 @@ export async function getTodos() {
   return data;
 }
 
-export async function addTodo(formData: FormData) {
+export async function addTodo(prevState:{message:string}, formData: FormData) {
   //! 要想拿到所有的formData 
   //! Object.fromEntries(formData) 拿到所有值
   const todo = formData.get("todo") as string;
@@ -16,4 +16,9 @@ export async function addTodo(formData: FormData) {
 
   console.log(data,'data---');
   revalidatePath("/server-action");
+
+  return {
+    ...prevState,
+    message:`add ${todo} success`
+  }
 }

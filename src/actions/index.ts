@@ -9,6 +9,8 @@ export async function getTodos() {
 }
 
 export async function addTodo(formData: FormData) {
+  //! 要想拿到所有的formData 
+  //! Object.fromEntries(formData) 拿到所有值
   const todo = formData.get("todo") as string;
   data.push(todo)
 

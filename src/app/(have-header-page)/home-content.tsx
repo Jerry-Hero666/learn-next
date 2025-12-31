@@ -6,6 +6,8 @@ const linkData = [
   { href: "/blog", label: "博客列表页" },
   { href: "/parallel", label: "平行路由页面" },
   { href: "/picture", label: "图片页面" },
+  { href: "/todos", label: "待办事项" },
+  { href: "/server-action", label: "待办事项--serverAction" },
 ];
 
 

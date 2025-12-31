@@ -2,12 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-   images: {
+  images: {
     remotePatterns: [
       {
-        hostname: 'tailwindcss.com',
+        hostname: "tailwindcss.com",
       },
     ],
+  },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
   },
 };
 

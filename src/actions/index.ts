@@ -34,3 +34,11 @@ export async function deleteSnippet(id: number) {
   });
   redirect("/snippets");
 }
+
+export async function editSnippet(id: number, code: string) {
+  await prisma.snippet.update({
+    where: { id },
+    data: { code },
+  });
+  redirect(`/snippets/${id}`);
+}

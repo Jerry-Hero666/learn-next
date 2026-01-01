@@ -38,7 +38,7 @@ const DetailPage = async ({ params }: IParams) => {
           <DelSnippetsButton id={parseInt(id)} />
         </div>
       </div>
-      <pre className="p-3 border border-teal-500 rounded bg-gray-200 mt-6">
+      <pre className="text-wrap p-3 border border-teal-500 rounded bg-gray-200 mt-6">
         <code>{snippetsById.code}</code>
       </pre>
     </div>

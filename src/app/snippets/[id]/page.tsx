@@ -1,6 +1,5 @@
-import { data } from "@/data";
+import DelSnippetsButton from "@/components/del-snippets";
 import { prisma } from "@/prisma";
-import { Card } from "antd";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -36,7 +35,7 @@ const DetailPage = async ({ params }: IParams) => {
           >
             编辑
           </Link>
-          <button className="p-2 border border-teal-500 rounded">删除</button>
+          <DelSnippetsButton id={parseInt(id)} />
         </div>
       </div>
       <pre className="p-3 border border-teal-500 rounded bg-gray-200 mt-6">

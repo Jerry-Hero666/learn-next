@@ -36,7 +36,7 @@ export default async function SnippetLists() {
             <Link
               className="flex justify-between items-center border border-teal-500 p-3 rounded"
               href={`/snippets/${el.id}`}
-              id={el.id + ""}
+              key={el.id + ""}
             >
               <span>{el.title}</span>
               <span>查看</span>

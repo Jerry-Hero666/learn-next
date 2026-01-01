@@ -8,16 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default async function SnippetLists() {
-  // async function getSnippet(formData: FormData) {
-  //   "use server";
-  //   const title = formData.get("title") as string;
-  //   const code = formData.get("code") as string;
-
-  //   await prisma.snippet.findMany()
-  // //   redirect("/");
-  // }
   const snippetLists = await prisma.snippet.findMany();
-  console.log(snippetLists);
 
   return (
     <div>

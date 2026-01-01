@@ -8,6 +8,7 @@ const linkData = [
   { href: "/picture", label: "图片页面" },
   { href: "/todos", label: "待办事项" },
   { href: "/server-action", label: "待办事项--serverAction" },
+  { href: "/snippets/new", label: "新建代码片段" },
 ];
 
 

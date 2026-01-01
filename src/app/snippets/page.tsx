@@ -2,6 +2,8 @@ import { prisma } from "@/prisma";
 import { Metadata } from "next";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "代码片段列表",
   description: "代码片段列表",
@@ -10,26 +12,24 @@ export const metadata: Metadata = {
 export default async function SnippetLists() {
   const snippetLists = await prisma.snippet.findMany();
 
-  const renderSnippetList = () =>{
-    console.log(snippetLists,'snippetLists')
-    if(snippetLists.length){
-      return (
-        snippetLists.map((el) => {
-          return (
-            <Link
-              className="flex justify-between items-center border border-teal-500 p-3 rounded"
-              href={`/snippets/${el.id}`}
-              key={el.id + ""}
-            >
-              <span>{el.title}</span>
-              <span>查看</span>
-            </Link>
-          );
-        })
-      )
+  const renderSnippetList = () => {
+    console.log(snippetLists, "snippetLists");
+    if (snippetLists.length) {
+      return snippetLists.map((el) => {
+        return (
+          <Link
+            className="flex justify-between items-center border border-teal-500 p-3 rounded"
+            href={`/snippets/${el.id}`}
+            key={el.id + ""}
+          >
+            <span>{el.title}</span>
+            <span>查看</span>
+          </Link>
+        );
+      });
     }
-    return <div>暂无数据</div>
-  }
+    return <div>暂无数据</div>;
+  };
 
   return (
     <div>
@@ -40,11 +40,9 @@ export default async function SnippetLists() {
           href="/snippets/new"
         >
           新建
-        </Link> 
+        </Link>
       </div>
-      <div className="flex flex-col gap-4 mt-2">
-        {renderSnippetList()}
-      </div>
+      <div className="flex flex-col gap-4 mt-2">{renderSnippetList()}</div>
     </div>
   );
 }

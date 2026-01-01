@@ -10,6 +10,27 @@ export const metadata: Metadata = {
 export default async function SnippetLists() {
   const snippetLists = await prisma.snippet.findMany();
 
+  const renderSnippetList = () =>{
+    console.log(snippetLists,'snippetLists')
+    if(snippetLists.length){
+      return (
+        snippetLists.map((el) => {
+          return (
+            <Link
+              className="flex justify-between items-center border border-teal-500 p-3 rounded"
+              href={`/snippets/${el.id}`}
+              key={el.id + ""}
+            >
+              <span>{el.title}</span>
+              <span>查看</span>
+            </Link>
+          );
+        })
+      )
+    }
+    return <div>暂无数据</div>
+  }
+
   return (
     <div>
       <div className="flex justify-between items-center mt-5">
@@ -22,18 +43,7 @@ export default async function SnippetLists() {
         </Link> 
       </div>
       <div className="flex flex-col gap-4 mt-2">
-        {snippetLists.map((el) => {
-          return (
-            <Link
-              className="flex justify-between items-center border border-teal-500 p-3 rounded"
-              href={`/snippets/${el.id}`}
-              key={el.id + ""}
-            >
-              <span>{el.title}</span>
-              <span>查看</span>
-            </Link>
-          );
-        })}
+        {renderSnippetList()}
       </div>
     </div>
   );

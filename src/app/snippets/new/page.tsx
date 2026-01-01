@@ -19,7 +19,7 @@ export default async function AddSnippets() {
         code,
       },
     });
-    redirect("/");
+    redirect("/snippets");
   }
 
   return (

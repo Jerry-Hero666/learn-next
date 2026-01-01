@@ -1,4 +1,6 @@
+import { prisma } from "@/prisma";
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "新建",
@@ -6,16 +8,19 @@ export const metadata: Metadata = {
 };
 
 export default async function AddSnippets() {
+  async function createSnippet(formData: FormData) {
+    "use server";
+    const title = formData.get("title") as string;
+    const code = formData.get("code") as string;
 
-    async function createSnippet(formData: FormData) {
-        'use server'
-       const title = formData.get('title') as string
-       const code = formData.get('code') as string
-
-       
-
-    //    console.log(title,code)
-    }
+    await prisma.snippet.create({
+      data: {
+        title,
+        code,
+      },
+    });
+    redirect("/");
+  }
 
   return (
     <form>
@@ -45,7 +50,13 @@ export default async function AddSnippets() {
             id="code"
           />
         </div>
-        <button formAction={createSnippet} className="rounded p-2 bg-blue-200" type="submit">创建</button>
+        <button
+          formAction={createSnippet}
+          className="rounded p-2 bg-blue-200"
+          type="submit"
+        >
+          创建
+        </button>
       </div>
     </form>
   );

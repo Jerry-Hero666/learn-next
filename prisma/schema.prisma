@@ -15,6 +15,6 @@ datasource db {
 
 model Snippet {
   id    Int    @id @default(autoincrement())
-  name  String
+  title  String
   code  String
 }

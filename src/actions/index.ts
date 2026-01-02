@@ -42,3 +42,33 @@ export async function editSnippet(id: number, code: string) {
   });
   redirect(`/snippets/${id}`);
 }
+
+export async function createSnippet(
+  prevState: { message: string },
+  formData: FormData
+) {
+  const title = formData.get("title") as string;
+  const code = formData.get("code") as string;
+
+  if (typeof title !== "string" || title.length < 3) {
+    return {
+      ...prevState,
+      message: "标题必须大于3个字符",
+    };
+  }
+
+  if (typeof code !== "string" || code.length < 3) {
+    return {
+      ...prevState,
+      message: "代码必须大于3个字符",
+    };
+  }
+
+  await prisma.snippet.create({
+    data: {
+      title,
+      code,
+    },
+  });
+  redirect("/snippets");
+}

@@ -1,26 +1,19 @@
-import { prisma } from "@/prisma";
-import { Metadata } from "next";
-import { redirect } from "next/navigation";
+"use client";
+import { createSnippet } from "@/actions";
+import { useActionState } from "react";
 
-export const metadata: Metadata = {
-  title: "新建",
-  description: "新建代码片段",
-};
+// export const metadata: Metadata = {
+//   title: "新建",
+//   description: "新建代码片段",
+// };
 
-export default async function AddSnippets() {
-  async function createSnippet(formData: FormData) {
-    "use server";
-    const title = formData.get("title") as string;
-    const code = formData.get("code") as string;
+const initialState ={
+  message:''
+}
 
-    await prisma.snippet.create({
-      data: {
-        title,
-        code,
-      },
-    });
-    redirect("/snippets");
-  }
+export default function AddSnippets() {
+  const [state, formAction] = useActionState(createSnippet, initialState);
+  
 
   return (
     <form>
@@ -38,6 +31,7 @@ export default async function AddSnippets() {
             id="title"
           />
         </div>
+      
         {/* Code */}
         <div className="flex grap-4 justify-center ">
           <label className="w-12" htmlFor="code">
@@ -50,8 +44,11 @@ export default async function AddSnippets() {
             id="code"
           />
         </div>
+        {
+          state.message &&  <div className="my-2 p-2 border bg-red-100 border-red-400">{state.message}</div>
+        }
         <button
-          formAction={createSnippet}
+          formAction={formAction}
           className="rounded p-2 bg-blue-200"
           type="submit"
         >

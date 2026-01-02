@@ -14,7 +14,6 @@ export default async function SnippetLists() {
   const snippetLists = await prisma.snippet.findMany();
 
   const renderSnippetList = () => {
-    console.log(snippetLists, "snippetLists");
     if (snippetLists.length) {
       return snippetLists.map((el) => {
         return (

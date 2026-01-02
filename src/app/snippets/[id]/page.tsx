@@ -44,4 +44,14 @@ const DetailPage = async ({ params }: IParams) => {
     </div>
   );
 };
+
 export default DetailPage;
+
+export async function generateStaticParams(){
+  const snippets = await prisma.snippet.findMany();
+  return snippets.map(el=>{
+    return {
+     id:el.id + ''
+    }
+  })
+}

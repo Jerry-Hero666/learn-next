@@ -5,8 +5,6 @@ import Link from "next/link";
 // export const dynamic = "force-dynamic";
 // export const revalidate = 0;
 
-export const revalidate = 1;
-
 export const metadata: Metadata = {
   title: "代码片段列表",
   description: "代码片段列表",

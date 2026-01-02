@@ -32,6 +32,7 @@ export async function deleteSnippet(id: number) {
   await prisma.snippet.delete({
     where: { id },
   });
+  revalidatePath('/snippets');
   redirect("/snippets");
 }
 
@@ -70,5 +71,6 @@ export async function createSnippet(
       code,
     },
   });
+  revalidatePath('/snippets');
   redirect("/snippets");
 }
